@@ -65,7 +65,7 @@ Follow these instructions to set up the project environment and run the notebook
 Clone the repository:
 
 ```bash
-git clone [https://github.com/praveenkoushikmuvva/Credit_Card-Fraud_Detection.git](https://github.com/praveenkoushikmuvva/Credit_Card-Fraud_Detection.git)
+git clone [https://github.com/Ritoban24/Capstone-project-credit-card-fraud-detection](https://github.com/Ritoban24/Capstone-project-credit-card-fraud-detection).git]
 cd Credit_Card-Fraud_Detection
 ```
 
@@ -89,16 +89,16 @@ The project is structured into a series of Jupyter notebooks that walk through t
 
 ### 1. Exploratory Data Analysis (EDA)
 
-- **`notebooks/01_eda_time_amount.ipynb`**  
+- **`01_eda_time_amount.ipynb`**  
   Focuses on the non-anonymized features. Analyzes how transaction `Amount` and `Time` correlate with fraudulent activity, establishing key patterns like the time of day when fraud is most likely to occur.
 
-- **`notebooks/02_eda_v_features.ipynb`**  
+- **`02_eda_v_features.ipynb`**  
   Analyzes the anonymized PCA features (`V1-V28`). Uses correlation matrices and violin plots to identify which features are the strongest predictors of fraud.
 
 ### 2. Feature Engineering
 
-- **`notebooks/03_feature_engineering.ipynb`**  
-  Details the creation and validation of new features. Transforms the raw data into a format more suitable for machine learning. Functions for these transformations are stored in `src/feature_engineering.py`.
+- **`03_feature_engineering.ipynb`**  
+  Details the creation and validation of new features. Transforms the raw data into a format more suitable for machine learning. Functions for these transformations are stored in `predict.py`.
 
 ### 3. Modeling and Optimization
 
@@ -113,7 +113,7 @@ The project is structured into a series of Jupyter notebooks that walk through t
 
 ### Data Format Requirement
 
-To use the prediction script, your input CSV file must have the same structure as the original `creditcard.csv` dataset, including the following columns:
+To use the prediction script, your input CSV file must have the same structure as the original `(https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud)` dataset, including the following columns:
 
 - `Time`  
 - `Amount`  
@@ -128,7 +128,7 @@ The script will automatically perform the necessary feature engineering.
 3. Run:
 
 ```bash
-python src/predict.py --input data/raw/new_data.csv --output data/processed/my_predictions.csv
+predict.py --input data/raw/new_data.csv --output data/processed/my_predictions.csv
 ```
 
 The script will generate a new CSV file containing the original data along with:
@@ -140,7 +140,7 @@ The script will generate a new CSV file containing the original data along with:
 
 ## ⚙️ A Note on Preprocessing
 
-Feature engineering steps are defined in `src/feature_engineering.py`. The included features (`hour`, `log_amount`, `business_hours`) are based on initial analysis and are designed as a strong starting point.
+Feature engineering steps are defined. The included features (`hour`, `log_amount`, `business_hours`) are based on initial analysis and are designed as a strong starting point.
 
 You can modify this file to add or change features. If you do, **retrain the model** to ensure it can leverage your new features.
 
